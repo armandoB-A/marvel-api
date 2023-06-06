@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import './listastyles.css';
+import {Link} from "react-router-dom";
 
 export const ListHeroes = () => {
     const [characters, setCharacters] = useState([]);
@@ -44,7 +45,11 @@ export const ListHeroes = () => {
                                         <p>No hay descripción disponible.</p>
                                     )
                                 }</p>
-                                <a target="blank" href={character.urls[0].url}>Ver mas info</a>
+
+                                <Link to={`heroe/${character.id}`}>
+                                    ver mas info
+                                </Link>
+
                             </div>
                         </li>
                     ))}
